@@ -1,0 +1,13 @@
+hr
+ul.nav.nav-pills
+    li(data-ng-class="{ active : panel.isSet(1) }")
+        a(href="" data-ng-click="panel.selectTab(1)") Desc
+    li(data-ng-class="{ active : panel.isSet(2) }")
+        a(href="" data-ng-click="panel.selectTab(2)") Spec
+    li(data-ng-class="{ active : panel.isSet(3) }")
+        a(href="" data-ng-click="panel.selectTab(3)") Review
+product-description.panel(data-ng-show="panel.isSet(1)")
+product-specs.panel(data-ng-show="panel.isSet(2)")
+product-review.panel(data-ng-show="panel.isSet(3)")
+div(data-ng-controller="ProductController as productToCartCtrl ")
+    button.center-block(type="button" class="btn btn-success" data-ng-show="product.canPurchase" data-ng-click="productToCartCtrl.sendToCart(product)") Add to Cart

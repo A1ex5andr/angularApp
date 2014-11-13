@@ -1,0 +1,35 @@
+
+<h4>Comments
+  <ul>
+    <li data-ng-repeat="review in product.reviews">
+      <blockquote><strong>{{ review.stars }} Stars <br></strong>{{ review.body }}
+        <cite class="clearfix">- {{ review.author }} {{ review.createdOn | date }}</cite>
+      </blockquote>
+    </li>
+    <!-- review form-->
+    <productReview>
+      <form name="reviewForm" data-ng-submit="reviewForm.$valid &amp;&amp; reviewCtrl.addReview(product)" novalidate="novalidate">
+        <!--live preview-->
+        <blockquote><strong>{{ reviewCtrl.review.stars }} Stars <br></strong>{{ reviewCtrl.review.body }}
+          <cite class="clearfix">- {{ review.author }}</cite>
+        </blockquote>
+        <!-- review form-->
+        <h4>Submit a Review</h4>
+        <fieldset class="form-group">
+          <select data-ng-model="reviewCtrl.review.stars" data-ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required="required" class="form-control">
+            <option value="">Rate this Product</option>
+          </select>
+        </fieldset>
+        <fieldset class="form-group">
+          <textarea data-ng-model="reviewCtrl.review.body" placeholder="Write your comment here..." title="Review" required="required" class="form-control"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+          <input data-ng-model="reviewCtrl.review.author" type="email" placeholder="your@email.com" title="Email" required="required" class="form-control ng-pristine ng-invalid"/>
+        </fieldset>
+        <fieldset class="form-group">
+          <input value="Submit Review" type="submit" class="btn btn-primary pull-right"/>
+        </fieldset>
+      </form>
+    </productReview>
+  </ul>
+</h4>

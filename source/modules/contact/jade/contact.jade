@@ -1,0 +1,77 @@
+.container
+    .row
+        .col-lg-12
+            h1.page-header
+                | Contact <br>
+                small We'd Love to Hear From You!
+            ol.breadcrumb
+                li
+                    a(href='../index.html') Home
+                li.active Contact
+        .col-lg-12
+            // Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it!
+            iframe(width='100%', height='400px', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?hl=en&ie=UTF8&ll=37.0625,-95.677068&spn=56.506174,79.013672&t=m&z=4&output=embed')
+    // /.row
+    .row
+        .col-sm-8
+            h3 Let's Get In Touch!
+            p
+                | Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats
+                | vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit
+                | voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+                | veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+            form(role='form', method='POST', action='#')
+                .row
+                    .form-group.col-lg-4
+                        label(for='input1') Name
+                        input#input1.form-control(type='text', name='contact_name')
+                    .form-group.col-lg-4
+                        label(for='input2') Email Address
+                        input#input2.form-control(type='email', name='contact_email')
+                    .form-group.col-lg-4
+                        label(for='input3') Phone Number
+                        input#input3.form-control(type='phone', name='contact_phone')
+                    .clearfix
+                    .form-group.col-lg-12
+                        label(for='input4') Message
+                        textarea#input4.form-control(name='contact_message', rows='6')
+                    .form-group.col-lg-12
+                        input(type='hidden', name='save', value='contact')
+                        button.btn.btn-primary(type='submit') Submit
+        .col-sm-4
+            h3 Modern Business
+            h4 A Start Bootstrap Template
+            p
+                | 5555 44th Street N.
+                br
+                | Bootstrapville, CA 32323
+                br
+            p
+                i.fa.fa-phone
+                abbr(title='Phone') P
+                | : (555) 984-3600
+            p
+                i.fa.fa-envelope-o
+                abbr(title='Email') E
+                | :
+                a(href='mailto:feedback@startbootstrap.com') feedback@startbootstrap.com
+            p
+                i.fa.fa-clock-o
+                abbr(title='Hours') H
+                | : Monday - Friday: 9:00 AM to 5:00 PM
+            ul.list-unstyled.list-inline.list-social-icons
+                li.tooltip-social.facebook-link
+                    a(href='#facebook-page', data-toggle='tooltip', data-placement='top', title='Facebook')
+                        i.fa.fa-facebook-square.fa-2x
+                li.tooltip-social.linkedin-link
+                    a(href='#linkedin-company-page', data-toggle='tooltip', data-placement='top', title='LinkedIn')
+                        i.fa.fa-linkedin-square.fa-2x
+                li.tooltip-social.twitter-link
+                    a(href='#twitter-profile', data-toggle='tooltip', data-placement='top', title='Twitter')
+                        i.fa.fa-twitter-square.fa-2x
+                li.tooltip-social.google-plus-link
+                    a(href='#google-plus-page', data-toggle='tooltip', data-placement='top', title='Google+')
+                        i.fa.fa-google-plus-square.fa-2x
+    // /.row
+// /.container
+              

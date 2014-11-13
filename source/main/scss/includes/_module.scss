@@ -1,0 +1,58 @@
+.contact {
+  padding-top:120px;
+  padding-bottom: 140px;
+}
+/* Social Icons Styles */
+.list-social-icons {
+  margin-bottom: 45px;
+}
+
+.tooltip-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.facebook-link a:hover {
+  color: #3b5998;
+}
+
+.linkedin-link a:hover {
+  color: #007fb1;
+}
+
+.twitter-link a:hover {
+  color: #39a9e0;
+}
+
+.google-plus-link a:hover {
+  color: #d14836;
+}
+
+footer {
+  margin-top: 300px;
+  background: lightgrey;
+  p {
+    padding-top: 10px;
+  }
+}
+.gallery{
+  padding: 10px;
+  &-thumbs{
+
+  }
+}
+
+.thumbnail {
+  border: 1px solid lightseagreen;
+  border-radius: 0px;
+}
+
+.product section.productPanel {
+  background: url('../img/background.png');
+  padding: 30px 2px;
+  border: 1px solid lightseagreen;
+}
+
+.panel div {
+  padding: 10px;
+}

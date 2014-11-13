@@ -1,0 +1,24 @@
+.container.cart(data-ng-controller="CartCtrl as cart")
+    h2 Shopping Card Example
+    table.table
+        tr
+            th id
+            th Model
+            th Name
+            th Qty
+            th Cost
+
+        tr(data-ng-repeat='product in cart.products')
+            td
+                div {{ product.id }}
+            td
+                div {{ product.name }}
+            td
+                div {{ product.model }}
+
+            td
+                input.input-mini(type='number', value='1')
+            td
+                div {{ product.price }}
+
+    | {{ cart.inCart }}
