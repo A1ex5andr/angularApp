@@ -1,18 +1,16 @@
 
-<div data-ng-controller="CartCtrl as cart" class="container cart">
-  <h2>Shopping Card Example</h2>
+<div data-ng-controller="CartCtrl as inCart" class="container cart">
+  <h2>Shopping Cart</h2>
   <table class="table">
     <tr>
-      <th>id</th>
+      <th></th>
       <th>Model</th>
       <th>Name</th>
       <th>Qty</th>
       <th>Cost</th>
     </tr>
-    <tr data-ng-repeat="product in cart.products">
-      <td>
-        <div>{{ product.id }}</div>
-      </td>
+    <tr data-ng-repeat="product in inCart.products">
+      <td class="col-md-2"><img data-ng-src="{{product.images[1]}}" class="img-responsive"/></td>
       <td>
         <div>{{ product.name }}</div>
       </td>
@@ -26,5 +24,5 @@
         <div>{{ product.price }}</div>
       </td>
     </tr>
-  </table>{{ cart.inCart }}
+  </table>
 </div>

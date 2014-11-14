@@ -1,16 +1,16 @@
-.container.cart(data-ng-controller="CartCtrl as cart")
-    h2 Shopping Card Example
+.container.cart(data-ng-controller="CartCtrl as inCart")
+    h2 Shopping Cart
     table.table
         tr
-            th id
+            th
             th Model
             th Name
             th Qty
             th Cost
 
-        tr(data-ng-repeat='product in cart.products')
-            td
-                div {{ product.id }}
+        tr(data-ng-repeat='product in inCart.products')
+            td.col-md-2
+                img.img-responsive(data-ng-src="{{product.images[1]}}")
             td
                 div {{ product.name }}
             td
@@ -20,5 +20,3 @@
                 input.input-mini(type='number', value='1')
             td
                 div {{ product.price }}
-
-    | {{ cart.inCart }}

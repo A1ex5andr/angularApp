@@ -2,21 +2,13 @@
 
     var app = angular.module('cart', []);
 
-    app.controller('CartCtrl', function ($scope, productService, $http) {
+    app.controller('CartCtrl', function ($scope, productService) {
 
-        $scope.products = productService.getProducts();
-        this.inCart = $scope.products;
-        this.qty = 1;
+            $scope.products = productService.getProducts();
+            this.products = $scope.products;
+            this.qty = 1;
 
-        console.log(this.inCart);
-
-        var store = this;
-        store.products = [];
-        $http.get('products.json').
-            success(function (data) {
-                store.products = data;
-            });
-
+            console.log(this.products.length);
 
         });
 }());

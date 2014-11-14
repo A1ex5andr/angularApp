@@ -4,7 +4,7 @@
 
     app.controller('ProductController', function($scope, productService) {
         this.sendToCart = function(product){
-            var productNew = product.id;
+            var productNew = product;
             var alreadyInCart = productService.getProducts();
             var existInCart = jQuery.inArray(productNew, alreadyInCart);
 

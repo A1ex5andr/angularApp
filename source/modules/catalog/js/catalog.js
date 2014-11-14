@@ -1,15 +1,14 @@
-var app = angular.module('catalog', []);
+(function () {
 
-    app.controller('CatalogController', ['$http', function ($http) {
+    var app = angular.module('catalog', []);
+
+    app.controller('CatalogController', function (getProductsJson) {
         var store = this;
         store.products = [];
+        getProductsJson.success(function (data) {
+            store.products = data;
+        });
+    });
 
+}());
 
-        //todo as a service
-        $http.get('products.json').
-            success(function (data) {
-                store.products = data;
-            });
-
-
-    }]);

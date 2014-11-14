@@ -1,21 +1,19 @@
-var app  = angular.module('storeService', []);
+app.service('productService', function() {
 
-    app.service('productService', function() {
+    var productList = [];
 
-        var productList = [];
+    var addProduct = function(obj) {
+        productList.push(obj);
+    };
 
-        var addProduct = function(id) {
-            productList.push(id);
-        };
+    // TODO create a callback func
+    var getProducts = function(){
+        return productList;
+    };
 
-        // ToDO create a callback func
-        var getProducts = function(){
-            return productList;
-        };
+    return {
+        addProduct: addProduct,
+        getProducts: getProducts
+    };
 
-        return {
-            addProduct: addProduct,
-            getProducts: getProducts
-        };
-
-    });
+});
