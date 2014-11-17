@@ -2,3 +2,6 @@
 .sass-cache
 build
 node_modules
+source/**/*.html
+source/**/*.css
+source/**/*.map
