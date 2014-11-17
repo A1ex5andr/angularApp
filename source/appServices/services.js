@@ -11,9 +11,13 @@ app.service('productService', function() {
         return productList;
     };
 
-    return {
-        addProduct: addProduct,
-        getProducts: getProducts
+    var removeProduct = function(index) {
+        productList.splice(index, 1);
     };
 
+    return {
+        addProduct: addProduct,
+        getProducts: getProducts,
+        removeProduct: removeProduct
+    };
 });

@@ -20,7 +20,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 		.when("/test", {templateUrl: "layout/test.html" })
 
 		// else 404
-		.otherwise("/404", {templateUrl: "layout/404.html" })
+		.otherwise({ redirectTo: "/404", templateUrl: "layout/404.html" })
 }]);
 
 app.controller('PageCtrl', ['$log', function ($log/* $scope, $location, $http */) {

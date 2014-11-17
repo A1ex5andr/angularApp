@@ -1,25 +1,36 @@
 .container.cart(data-ng-controller="CartCtrl as inCart")
     h2 Shopping Cart
-    table.table
+    h3(ng-show="inCart.getCount() === 0") Cart is empty
+    table.table(ng-hide="inCart.getCount() === 0")
         tr
             th
             th Model
             th Name
             th Qty
-            th Cost
-            th Sum
+            th(class="text-right") Cost
+            th(class="text-right") Sum
+            th
 
-        tr(data-ng-repeat='product in inCart.products')
+        tr(data-ng-repeat='product in resultValue=(inCart.products)')
             td.col-sm-2
                 img.img-responsive(data-ng-src="{{product.images[1]}}")
             td
                 div {{ product.name }}
             td
                 div {{ product.model }}
-
             td
                 input.input-mini(type='number', data-ng-model="item.qty", value='1')
+            td(class="text-right")
+                div ${{ product.price | number: 2 }}
+            td(class="text-right")
+                div ${{ item.qty * product.price | number: 2 }}
             td
-                div {{ product.price }}
-            td
-                div {{ item.qty }}
+                a(href="" ng-click="inCart.removeItem($index)") Delete
+        tr
+            td(colspan="4")
+                b Total
+            td(class="text-right")
+                b ${{ resultValue | sumOfValue: 'price' | number: 2 }}
+            td(class="text-right")
+                b ${{ resultValue | sumOfValue: 'price' | number: 2 }}
+            td &nbsp;
