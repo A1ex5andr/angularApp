@@ -1,9 +1,0 @@
-
-<section class="gallery">
-  <div class="img-wrap"><img data-ng-src="{{product.images[gallery.pic]}}" class="img-responsive"/></div>
-  <div data-ng-show="{{ product.images.length }}" class="gallery">
-    <ul class="thumbs gallery-thumbs">
-      <li data-ng-repeat="pic in product.images" class="thumbnail col-xs-4"><img data-ng-src="{{ pic }}" data-ng-click="gallery.setPic($index)" alt="{{ 123 }}" class="gallery-image fade-animation img-responsive"/></li>
-    </ul>
-  </div>
-</section>
