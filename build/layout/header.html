@@ -13,8 +13,9 @@
         <li><a href="#/contact">Contact</a></li>
         <li><a href="#/test">Test</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/cart">Cart</a></li>
+      <ul ng-controller="CartCtrl as inCart" class="nav navbar-nav navbar-right">
+        <li><a href="#/cart">Cart<span>&nbsp;(<span ng-show="inCart.getCount() === 0">empty</span><span ng-hide="inCart.getCount() === 0">{{inCart.getCount()}}
+                <ng-pluralize count="inCart.getCount()" when="{                                    'one': 'item',                                    'other': 'items'                                    }"></ng-pluralize></span>)</span></a></li>
       </ul>
     </div>
     <!-- /.nav-collapse-->

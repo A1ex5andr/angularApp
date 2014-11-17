@@ -10,6 +10,7 @@
     <productReview>
       <form name="reviewForm" data-ng-submit="reviewForm.$valid &amp;&amp; reviewCtrl.addReview(product)" novalidate="novalidate">
         <!--live preview-->
+        <p>Preview:</p>
         <blockquote><strong>{{ reviewCtrl.review.stars }} Stars <br></strong>{{ reviewCtrl.review.body }}
           <cite class="clearfix">- {{ review.author }}</cite>
         </blockquote>
