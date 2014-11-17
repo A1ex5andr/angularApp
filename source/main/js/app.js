@@ -23,7 +23,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 		.otherwise("/404", {templateUrl: "layout/404.html" })
 }]);
 
-app.controller('PageCtrl', function (/* $scope, $location, $http */) {
-	console.log("Page Controller reporting on duty.");
-});
+app.controller('PageCtrl', ['$log', function ($log/* $scope, $location, $http */) {
+	$log.info("Page Controller reporting on duty.");
+}]);
 

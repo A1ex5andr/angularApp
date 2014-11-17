@@ -2,7 +2,7 @@
 
     var app = angular.module('store-panel', []);
 
-    app.controller('ProductController', function($scope, productService) {
+    app.controller('ProductController', ['$scope', 'productService', function($scope, productService) {
         this.sendToCart = function(product){
             var productNew = product;
             var alreadyInCart = productService.getProducts();
@@ -17,7 +17,7 @@
             console.log(alreadyInCart);
 
         };
-    });
+    }]);
 
     app.directive('productPanel', function () {
         return{

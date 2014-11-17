@@ -7891,7 +7891,8 @@ footer {
     padding-top: 10px; }
 
 .gallery {
-  padding: 10px; }
+  overflow: hidden;
+  padding: 20px 10px 0 10px; }
 
 .thumbnail {
   border: 1px solid lightseagreen;
@@ -7904,6 +7905,11 @@ footer {
 
 .panel div {
   padding: 10px; }
+
+.panelTabs ul li {
+  width: 33.33333%;
+  text-align: center;
+  margin: 0; }
 
 body {
   padding-top: 80px; }
