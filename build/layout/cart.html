@@ -1,16 +1,18 @@
 
 <div data-ng-controller="CartCtrl as inCart" class="container cart">
   <h2>Shopping Cart</h2>
-  <table class="table">
+  <h3 ng-show="inCart.getCount() === 0">Cart is empty</h3>
+  <table ng-hide="inCart.getCount() === 0" class="table">
     <tr>
       <th></th>
       <th>Model</th>
       <th>Name</th>
       <th>Qty</th>
-      <th>Cost</th>
-      <th>Sum</th>
+      <th class="text-right">Cost</th>
+      <th class="text-right">Sum</th>
+      <th></th>
     </tr>
-    <tr data-ng-repeat="product in inCart.products">
+    <tr data-ng-repeat="product in resultValue=(inCart.products)">
       <td class="col-sm-2"><img data-ng-src="{{product.images[1]}}" class="img-responsive"/></td>
       <td>
         <div>{{ product.name }}</div>
@@ -19,14 +21,20 @@
         <div>{{ product.model }}</div>
       </td>
       <td>
-        <input type="number" data-ng-model="item.qty" value="1" class="input-mini"/>
+        <input type="number" data-ng-model="product.qty" value="1" min="1" class="input-mini"/>
       </td>
-      <td>
-        <div>{{ product.price }}</div>
+      <td class="text-right">
+        <div>${{ product.price | number: 2 }}</div>
       </td>
-      <td>
-        <div>{{ item.qty }}</div>
+      <td class="text-right">
+        <div>${{ product.qty * product.price | number: 2 }}</div>
       </td>
+      <td><a href="" ng-click="inCart.removeItem($index)">Delete</a></td>
+    </tr>
+    <tr>
+      <td colspan="5"><b>Total</b></td>
+      <td class="text-right"><b>${{resultValue | totalSumPriceQty:'qty':'price' | number: 2 }}</b></td>
+      <td>&nbsp;</td>
     </tr>
   </table>
 </div>

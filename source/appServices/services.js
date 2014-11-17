@@ -3,6 +3,7 @@ app.service('productService', function() {
     var productList = [];
 
     var addProduct = function(obj) {
+        obj.qty = 1;
         productList.push(obj);
     };
 

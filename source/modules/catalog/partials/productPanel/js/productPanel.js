@@ -15,7 +15,6 @@
             }
             checkExist();
             console.log(alreadyInCart);
-
         };
     }]);
 
@@ -74,6 +73,20 @@
             var sum = 0;
             for (var i = 0; i < data.length; i++) {
                 sum = sum + data[i][key];
+            }
+            return sum;
+        }
+    });
+
+    app.filter('totalSumPriceQty', function () {
+        return function (data, key1, key2) {
+            debugger;
+            if (typeof (data) === 'undefined' && typeof (key1) === 'undefined' && typeof (key2) === 'undefined') {
+                return 0;
+            }
+            var sum = 0;
+            for (var i = 0; i < data.length; i++) {
+                sum = sum + (data[i][key1] * data[i][key2]);
             }
             return sum;
         }
