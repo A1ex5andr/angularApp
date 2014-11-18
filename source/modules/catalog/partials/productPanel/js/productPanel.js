@@ -2,8 +2,9 @@
 
     var app = angular.module('store-panel', []);
 
-    app.controller('ProductController', ['$scope', 'productService', function($scope, productService) {
+    app.controller('ProductController', ['$scope', 'productService', 'CartService', function($scope, productService, cartService) {
         this.sendToCart = function(product){
+/*
             var productNew = product;
             var alreadyInCart = productService.getProducts();
             var existInCart = jQuery.inArray(productNew, alreadyInCart);
@@ -14,7 +15,9 @@
                 }
             }
             checkExist();
-            console.log(alreadyInCart);
+*/
+            //console.log(alreadyInCart);
+            cartService.save(product);
         };
     }]);
 
@@ -80,7 +83,6 @@
 
     app.filter('totalSumPriceQty', function () {
         return function (data, key1, key2) {
-            debugger;
             if (typeof (data) === 'undefined' && typeof (key1) === 'undefined' && typeof (key2) === 'undefined') {
                 return 0;
             }

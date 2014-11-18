@@ -75,6 +75,7 @@ gulp.task('vendorJs', function () {
         config.vendor + '/js/jquery.js',
         config.vendor + '/js/angular.js',
         config.vendor + '/js/angular-route.js',
+        config.vendor + '/js/angular-resource.js',
         config.vendor + '/js/bootstrap.js'
         ])
         .pipe(concat('vendor.js'))

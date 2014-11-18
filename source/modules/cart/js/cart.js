@@ -1,20 +1,13 @@
-(function () {
+app.controller('CartController', ['$scope', 'CartService', function($scope, CartService) {
+    //this.items = CartService.items;
 
-    var app = angular.module('cart', []);
+    this.get = function () {
+        return CartService.items;
+    };
 
-    app.controller('CartCtrl', function ($scope, productService) {
-            $scope.products = productService.getProducts();
-            this.products = $scope.products;
-            this.qty = 1;
-
-            console.log(this.products.length);
-
-            this.getCount = function() {
-                return this.products.length;
-            };
-
-            this.removeItem = function(index) {
-                productService.removeProduct(index);
-            };
-        });
-}());
+/*
+    this.add = function (item) {
+        this.items = CartService.save(item);
+    };
+*/
+}]);

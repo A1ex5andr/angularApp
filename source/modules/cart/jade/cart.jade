@@ -1,4 +1,4 @@
-.container.cart(data-ng-controller="CartCtrl as inCart")
+.container.cart(data-ng-controller="CartController as inCart")
     h2 Shopping Cart
     h3(ng-show="inCart.getCount() === 0") Cart is empty
     table.table(ng-hide="inCart.getCount() === 0")
@@ -11,7 +11,7 @@
             th(class="text-right") Sum
             th
 
-        tr(data-ng-repeat='product in resultValue=(inCart.products)')
+        tr(data-ng-repeat='product in resultValue=(inCart.items)')
             td.col-sm-2
                 img.img-responsive(data-ng-src="{{product.images[1]}}")
             td
