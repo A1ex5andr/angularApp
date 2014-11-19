@@ -1,8 +1,8 @@
 
 <div data-ng-controller="CartController as inCart" class="container cart">
   <h2>Shopping Cart</h2>
-  <h3 ng-show="inCart.getCount() === 0">Cart is empty</h3>
-  <table ng-hide="inCart.getCount() === 0" class="table">
+  <h3 ng-show="inCart.get().length === 0">Cart is empty</h3>
+  <table ng-hide="inCart.get().length === 0" class="table">
     <tr>
       <th></th>
       <th>Model</th>
@@ -12,7 +12,7 @@
       <th class="text-right">Sum</th>
       <th></th>
     </tr>
-    <tr data-ng-repeat="product in resultValue=(inCart.items)">
+    <tr data-ng-repeat="product in resultValue=(inCart.get())">
       <td class="col-sm-2"><img data-ng-src="{{product.images[1]}}" class="img-responsive"/></td>
       <td>
         <div>{{ product.name }}</div>

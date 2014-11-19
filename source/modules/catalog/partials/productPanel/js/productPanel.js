@@ -17,6 +17,7 @@
             checkExist();
 */
             //console.log(alreadyInCart);
+            product.qty = 1;
             cartService.save(product);
         };
     }]);
