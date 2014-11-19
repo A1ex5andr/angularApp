@@ -25,26 +25,22 @@ app.all('*', function(req, res, next) {
     next();
 });
 
-app.get('/', function (req, res) {
-    res.send('Hello World!')
-});
-
 app.get('/cart', function (req, res) {
     createCart(req);
-    res.send(req.session.cart.items);
+    res.send({result: "success", items: req.session.cart.items});
+    console.log(req.session.cart.items);
 });
 
 app.post('/cart', function(req, res) {
     createCart(req);
-    console.log("add to cart");
-    req.session.cart.items.push(req.body);
+    req.session.cart.items[req.body.id] = req.body;
     res.send({result: "success", items: req.session.cart.items});
 });
 
 function createCart(req) {
     if (!req.session.cart)
         req.session.cart = {
-            items: []
+            items: {}
         };
 }
 
