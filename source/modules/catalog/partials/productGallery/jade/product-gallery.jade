@@ -1,7 +1,0 @@
-section.gallery
-    .img-wrap
-        img.img-responsive(data-ng-src="{{product.images[gallery.pic]}}")
-    .gallery(data-ng-show="{{ product.images.length }}")
-        ul.thumbs.gallery-thumbs
-            li.thumbnail.col-xs-4(data-ng-repeat="pic in product.images")
-                img(data-ng-src="{{ pic }}" data-ng-click="gallery.setPic($index)" alt="{{ 123 }}" class="gallery-image fade-animation img-responsive")

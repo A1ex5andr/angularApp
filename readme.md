@@ -1,10 +1,6 @@
-v_0.0.3 -   modified reviewCtrl as element,
-            catalog and cart into one scope with adding into cart,
-            services folder, edited gulpfile
+# gulp.task('css'
+    .pipe(sass({ style: 'nested', "sourcemap=none": true  })
+    temp fix for autoprefixer + ruby sass
+    http://stackoverflow.com/questions/26979433/gulp-with-gulp-ruby-sass-error-style-css-map31-unknown-word
 
-v_0.0.2 -   new source architecture,
-            re-edited gulpfile,
-            routes to act as single page app
-
-v_0.0.1 -   base template: AngularJs, Gulp, Sass and Jade.
-            Module partials with own content and dependencies.
+v_0.0.1 -   basic modular template: AngularJs, Gulp, Sass and Jade.

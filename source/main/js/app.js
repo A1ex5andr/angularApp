@@ -1,11 +1,8 @@
 var app = angular.module('store', [
 	'ngRoute',
-	'catalog',
-	'store-gallery',
-	'store-panel',
+	'ngResource',
 	'contact',
-	'scopeTest',
-	'cart'
+	'scopeTest'
 ]);
 
 app.config(['$routeProvider', function ($routeProvider) {
@@ -14,9 +11,7 @@ app.config(['$routeProvider', function ($routeProvider) {
 		.when("/", {templateUrl: "layout/home.html", controller: "PageCtrl"})
 
 		// main page modules
-		.when("/catalog", {templateUrl: "layout/catalog.html" })
 		.when("/contact", {templateUrl: "layout/contact.html" })
-		.when("/cart", {templateUrl: "layout/cart.html" })
 		.when("/test", {templateUrl: "layout/test.html" })
 
 		// else 404

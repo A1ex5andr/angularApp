@@ -11,21 +11,13 @@ var     gulp        = require("gulp"),                   // main gulp file
         util        = require("gulp-util");              // gulp utilities required
 
 var AUTOPREFIXER_BROWSERS = [
-    'ie >= 8',
-    'ie_mob >= 10',
-    'ff >= 30',
-    'chrome >= 34',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4.4',
-    'bb >= 10'
+    'last 2 versions'
 ];
 
 var config = {
     main:       'source/main',
     module:     'source/modules',
-    factories:    'source/appFactories',
+    factories:  'source/appFactories',
     services:   'source/appServices',
     directives: 'source/appDirectives',
     vendor:     'source/vendor',
@@ -62,7 +54,7 @@ gulp.task('cssVendor', function() {
 
 gulp.task('css', function() {
     return gulp.src(config.main + '/scss/style.scss')
-        .pipe(sass({ style: 'nested'  }) //'compact', //'compressed',
+        .pipe(sass({ style: 'nested', "sourcemap=none": true  }) //'compact', //'compressed',
         .on("error", notify.onError(function (error) {
             return "Error: " + error.message;
         })))
@@ -75,6 +67,7 @@ gulp.task('vendorJs', function () {
         config.vendor + '/js/jquery.js',
         config.vendor + '/js/angular.js',
         config.vendor + '/js/angular-route.js',
+        config.vendor + '/js/angular-resource.js',
         config.vendor + '/js/bootstrap.js'
         ])
         .pipe(concat('vendor.js'))
@@ -109,7 +102,7 @@ gulp.task('staticModuleImg', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(config.main + '/*.jade', ['jadeIndex']);
+    gulp.watch(config.main + '/jade/*.jade', ['jadeIndex']);
     gulp.watch(config.module + '/**/*.jade', ['jadeModule']);
     gulp.watch(config.module + '/**/*.scss', ['cssModule', 'css']);
     gulp.watch(config.vendor + '/css/*.scss', ['cssVendor', 'css']);
@@ -129,7 +122,7 @@ gulp.task('watch', function() {
 // DEFAULT TASKS + LiveRELOAD _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 gulp.task('default', [
     'jadeIndex', 'jadeModule',
-    'cssVendor', 'cssModule', 'css',
+    'css', //'cssModule', 'cssVendor',
     'vendorJs', 'appJs',
     'statics', 'staticModuleImg',
     'watch' ]);
