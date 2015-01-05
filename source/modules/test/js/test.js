@@ -1,31 +1,19 @@
 angular.module('scopeTest', [])
 
-    .controller('FirstCtrl', function () {
+    .controller('FirstCtrl', function ($scope, Data) {
+        $scope.data = Data;
+    })
 
-    }).controller('SecondCtrl', function () {
+    .controller('SecondCtrl', function ($scope, Data) {
+        $scope.data = Data;
+    })
 
-});
+    .factory('Data', function () {
+        return { message: "I'm a data from a service" }
+    })
 
-function assert (testName, value, desc) {
-    value ? console.log(testName + desc) : console.log (testName +  " - failed.");
-}
-
-var testIt = function() {
-    return this;
-};
-
-var newTest = testIt;
-
-assert('type of newTest', typeof newTest() === "object", 'yes' );
-
-var object = {
-    res: testIt
-};
-var objectNew = {
-    res: newTest
-};
-
-//console.log(testIt());
-console.log(typeof newTest());
-//console.log(object.res());
-//console.log(objectNew.res());
+    .filter('reverse', function () {
+        return function (text) {
+            return text.split("").reverse().join("");
+        }
+    });

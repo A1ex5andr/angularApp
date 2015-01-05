@@ -1,26 +1,19 @@
 
-<!--.col-md-6-->
-<!--    h1 no "." for general scope-->
-<!--        input(type="text", ng-model="message")-->
-<!--        h3 {{ message }}-->
-<!--        div(ng-controller="FirstCtrl")-->
-<!--            input(type="text", ng-model="message")-->
-<!--            h4 {{ message }}-->
-<!--        div(ng-controller="SecondCtrl")-->
-<!--            input(type="text", ng-model="message")-->
-<!--            h4 {{ message }}-->
+<div ui-view="header"></div>
 <div class="container">
-  <div class="col-md-6">
-    <h1>with "." and general scope</h1>
-    <input type="text" ng-model="data.message"/>
-    <h3>{{ data.message }}</h3>
+  <div class="col-md-12">
+    <!--h1 with "." and general scope-->
+    <!--div-->
+    <!--    input(type="text", ng-model="data.message", placeholder="General SCOPE")-->
+    <!--    h4 {{ data.message }}-->
     <div ng-controller="FirstCtrl">
-      <input type="text" ng-model="data.message"/>
+      <input type="text" ng-model="data.message" placeholder="First Controller" class="col-sm-12"/>
       <h4>{{ data.message }}</h4>
     </div>
     <div ng-controller="SecondCtrl">
-      <input type="text" ng-model="data.message"/>
+      <input type="text" ng-model="data.message" placeholder="Second Controller" class="col-sm-12"/>
+      <h4>{{ data.message|reverse }}</h4>
     </div>
-    <h4>{{ data.message }}</h4>
   </div>
 </div>
+<div ui-view="footer"></div>

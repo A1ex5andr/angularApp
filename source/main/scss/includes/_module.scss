@@ -35,35 +35,3 @@ footer {
     padding-top: 10px;
   }
 }
-.gallery{
-  overflow: hidden;
-  padding: 20px 10px 0 10px;
-  &-thumbs{
-
-  }
-}
-
-.thumbnail {
-  border: 1px solid lightseagreen;
-  border-radius: 0px;
-}
-
-.product section.productPanel {
-  background: url('../img/background.png');
-  padding: 30px 2px;
-  border: 1px solid lightseagreen;
-}
-
-.panel div {
-  padding: 10px;
-}
-
-.panelTabs {
-  ul {
-    li {
-      width: percentage(1/3);
-      text-align: center;
-      margin: 0;
-    }
-  }
-}

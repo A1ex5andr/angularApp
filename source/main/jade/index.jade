@@ -11,12 +11,7 @@ html(data-ng-app="store")
     body
 
         // Our Website Content Goes Here
-
-        div(ng-include="'layout/header.html'")
-
-        div(ng-view="'layout/home.html'")
-
-        div(ng-include="'layout/footer.html'")
+        div(data-ui-view)
 
         // End of content parts
 
