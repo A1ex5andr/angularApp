@@ -1,0 +1,4 @@
+angularApp
+==========
+
+Modular AngularJS app
